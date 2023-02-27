@@ -22,6 +22,8 @@ class pessoa_tel extends Model
 
 
     /* App\Models\pessoa_tel::create(["id_pessoa"=>"1","num_tel"=>"(21)99887-0969"]); 
+    /* App\Models\pessoa_tel::create(["id_pessoa"=>"2","num_tel"=>"(21)99890-0969"]); 
+    /* App\Models\pessoa_tel::create(["id_pessoa"=>"3","num_tel"=>"(21)33887-0969"]); 
            
            
            use App\Models\pessoa_tel;

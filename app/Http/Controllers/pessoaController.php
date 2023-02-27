@@ -21,8 +21,21 @@ use geekcom\ValidatorDocs\Rules\TituloEleitoral;
 
 use App\Http\Controllers\Helpers;
 
+
+
 class pessoaController extends Controller
+
 {
+    /* @var pessoa */
+    protected pessoa $pessoa;
+    protected pessoa_tel $p_tel;
+    
+    public function __construct(pessoa $pessoa, pessoa_tel $p_tel)
+    {
+        $this->pessoa = $pessoa;
+        $this->p_tel = $p_tel;
+    }
+
     /**
      * Display a listing of the resource.
      *
@@ -79,13 +92,14 @@ class pessoaController extends Controller
         $pessoa->email = "marley@gmail.com";
         $pessoa->dt_nasc = "2022-05-25";
         $pessoa->nacionalidade = "Inglêsa";
-        $pessoa->save();
+        //$pessoa->save();
+        $pessoa = $this->pessoa->create($request->all());
 
-        
+
         //return redirect('/insert-pessoas');
     }
 
-    
+
 
     /**
      * Display the specified resource.
@@ -128,12 +142,13 @@ class pessoaController extends Controller
             $pessoa->email = "marley@gmail.com";
             $pessoa->dt_nasc = "2022-05-25";
             $pessoa->nacionalidade = "Inglêsa";
-            $pessoa->save();
+            //$pessoa->save();
+            $pessoa = $this->pessoa->create($request->all());
 
             //return redirect('/insert-pessoas');
         }
     }
-  
+
 
     public function softDelete(Request $request, $id)
     {
