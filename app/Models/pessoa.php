@@ -25,7 +25,7 @@ class pessoa extends Model
 
     public function telefone(){
 
-        return $this->hasMany(pessoa_tel::class,'id_pessoa');
+        return $this->hasMany(pessoa_tel::class,'id_pessoa','num_tel');
 
      }
 
